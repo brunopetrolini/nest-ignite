@@ -1,0 +1,13 @@
+services:
+  db:
+    container_name: nest-ignite-pg
+    image: postgres
+    environment:
+      POSTGRES_DB: nest-ignite
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      PGDATA: /data/postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/pg:/data/postgres
